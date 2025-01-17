@@ -4,15 +4,16 @@ import java.util.Scanner;
 // clique no ícone <icon src="AllIcons.Actions.Execute"/> no gutter.
 public class Main {
     public static void main(String[] args) {
+        int password = 2002;
+
         Scanner sc = new Scanner(System.in);
 
-        int x = sc.nextInt();
-        int total = x;
-        while (x != 0) {
-            x = sc.nextInt();
-            total += x;
+        int tentativa = sc.nextInt();
+
+        while (tentativa != password) {
+            System.out.println("Senha Invalida");
+            tentativa = sc.nextInt();
         }
-        System.out.println(total);
-        sc.close();
+        System.out.println("Acesso permitido");
     }
 }
