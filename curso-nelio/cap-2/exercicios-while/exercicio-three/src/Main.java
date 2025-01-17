@@ -13,7 +13,6 @@ public class Main {
 
         while (code != 4) {
 
-            if (code == 0) code = sc.nextInt();
             if(code == 1) alcool++;
             if(code == 2) gasolina++;
             if(code == 3) diesel++;
