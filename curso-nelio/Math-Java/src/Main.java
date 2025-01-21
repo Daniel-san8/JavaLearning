@@ -5,5 +5,11 @@ public class Main {
         System.out.println(Math.pow(2, 3));
         System.out.println(Math.sqrt(2));
         System.out.println(Math.abs(-88));
+
+        String[] vect = new String[] {"Daniel San", "fernando", "jessica"};
+
+        for(String name : vect) {
+            System.out.println(name);
+        }
     }
 }
