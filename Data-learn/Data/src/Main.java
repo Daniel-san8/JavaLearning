@@ -1,7 +1,4 @@
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 
 //TIP Para <b>executar</b> o código, pressione <shortcut actionId="Run"/> ou
@@ -16,9 +13,11 @@ public class Main {
         LocalDateTime parseLocalDateTime = LocalDateTime.parse("2020-01-01T00:00:00");
         Instant parseInstant = Instant.parse("2020-01-01T00:00:00Z");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate dd = LocalDate.ofInstant(instant, ZoneId.systemDefault());
         System.out.println(date01);
         System.out.println(date02);
         System.out.println(instant);
+        System.out.println(dd);
 
     }
 }
