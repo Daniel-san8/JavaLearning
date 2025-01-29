@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        File file = new File("c::\\temp\\texto.txt");
+        File file = new File("texto.txt");
         Scanner sc = null;
 
         try {
@@ -14,6 +14,8 @@ public class Main {
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
+        } finally {
+            if(sc != null) sc.close();
         }
     }
 }
