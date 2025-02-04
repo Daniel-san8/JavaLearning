@@ -1,5 +1,7 @@
 package entities;
 
 public interface CalculationParcelas {
-    public double calcular(double parcelas, int tax);
+    double calcular(double parcelaDivisor, int parcela);
+
+    double calcularPlusTax(double valuePercenty);
 }

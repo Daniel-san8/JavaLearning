@@ -1,14 +1,14 @@
 package entities;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Contract implements CalculationParcelas{
 
     Integer parcelas;
     LocalDate date;
     Double valueContract;
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 
     public Contract () {
@@ -22,16 +22,22 @@ public class Contract implements CalculationParcelas{
     }
 
     @Override
-    public double calcular(double parcelas, int tax) {
-        double valuePercenty = (double) (valueContract * tax) / 100;
+    public double calcular(double parcelaDivisor, int parcela) {
+        return (double) parcelaDivisor + ((parcelaDivisor * parcela) / 100);
+    }
 
-        return valuePercenty + (valuePercenty * tax / 100);
+    @Override
+    public double calcularPlusTax(double valuePercenty) {
+        return valuePercenty + ((valuePercenty * 2) / 100);
     }
 
     public void viewParcelas() {
+        double valueTotalParc;
         for (int i = 0; i < parcelas; i++) {
-            System.out.print(date.plusMonths(1) + " - ");
-            System.out.print(calcular(parcelas, i));
+            valueTotalParc  = calcular((valueContract / parcelas), i + 1);
+            System.out.print(dateFormatter.format(date.plusMonths(i + 1)) + " - ");
+            System.out.print(calcularPlusTax(valueTotalParc));
+            System.out.println();
         }
     }
 }
