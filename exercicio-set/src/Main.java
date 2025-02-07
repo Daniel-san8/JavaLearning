@@ -8,22 +8,16 @@ public class Main {
         System.out.print("How many students for course A?");
         Set<Integer> courseQuantity = new HashSet<>();
         int courseA = sc.nextInt();
-        for (int i = 0; i < courseA; i++) {
-            int quantity = sc.nextInt();
-           courseQuantity.add(quantity);
-        }
+        CalculatorCourseService.CalculatorCourse(courseA, courseQuantity);
+
         System.out.print("How many students for course B?");
         int courseB = sc.nextInt();
-        for (int i = 0; i < courseB; i++) {
-            int quantity = sc.nextInt();
-            courseQuantity.add(quantity);
-        }
+        CalculatorCourseService.CalculatorCourse(courseB, courseQuantity);
+
         System.out.print("How many students for course C?");
         int courseC = sc.nextInt();
-        for (int i = 0; i < courseC; i++) {
-            int quantity = sc.nextInt();
-            courseQuantity.add(quantity);
-        }
+        CalculatorCourseService.CalculatorCourse(courseC, courseQuantity);
+
         System.out.println("Total Students: " + courseQuantity.size());
 
     }
